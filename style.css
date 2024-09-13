@@ -22,6 +22,19 @@ ul{
     list-style: none;
 }
 
+h2{
+    font-size: 10vh;
+    text-align: center;
+    margin: 5%;
+}
+
+h3{
+    font-family: 'ubuntu',serif;
+    font-size: 1.7rem;
+    margin: 0.5rem;
+    color: #14a8c9;
+}
+
 header{
     width: 100%;
     height: 100vh;
@@ -62,7 +75,8 @@ header p{
 
 .solar-system-overview h2{
     font-size: 3rem;
-    padding: 1rem;
+    margin: 1rem;
+    text-align: left;
 }
 
 .swiper {
@@ -86,14 +100,15 @@ header p{
     object-fit: cover;
 }
 
-.planets{
-    width: 100%;
+article p{
+    padding: 0.5rem;
 }
 
-.planets h2, .moons h2, .solar-system-objects h2{
-    font-size: 10vh;
-    text-align: center;
-    margin: 5%;
+article img{
+    height: 15rem;
+    min-height: 12rem;
+    object-fit: cover;
+    animation: float 3s infinite ease-in;
 }
 
 .planet, .moon{
@@ -104,27 +119,9 @@ header p{
     margin: 1.5rem auto;
 }
 
-.planet h3,.moon h3, .solar-system-objects h3{
-    font-family: 'ubuntu',serif;
-    font-size: 1.7rem;
-    margin: 0.5rem;
-    color: #14a8c9;
-}
-
-.planet p,.moon p ,.solar-system-objects p{
-    padding: 0.5rem;
-}
-
-.planet li{
+.planet ul li{
     font-size: 1.3rem;
     padding: 0 0.5rem;
-}
-
-.planet img, .moon img{
-    height: 15rem;
-    min-height: 12rem;
-    object-fit: cover;
-    animation: float 3s infinite ease-in;
 }
 
 @keyframes float{
@@ -179,3 +176,35 @@ header p{
     font-weight: bold;
 }
 
+@media(max-width:600px){
+    header h1{
+        font-size: 7vh;
+    }
+    .planets h2, .moons h2, .solar-system-objects h2{
+        font-size: 7.5vh;
+    }
+    .planet,.moon{
+        width: 80%;
+    }
+}
+
+@media(max-width:650px){
+    header h1{
+        font-size: 8vh;
+    }
+}
+
+@media(max-width:900px){
+    .planet,.moon{
+        width: 70%;
+    }
+}
+
+@media(max-width:1400px){
+    .moons{
+        grid-template-columns: 1fr;
+    }
+    .moon{
+        border: 2px solid white;
+    }
+}
