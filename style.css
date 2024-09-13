@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: rgb(10, 10, 10);
+    color: white;
+}
+
+p{
+    font-size: 1.3rem;
+    padding: 0 1rem;
+}
+
+ul{
+    list-style: none;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+header h1, header p{
+    position: relative;
+    z-index: 1;
+    margin: 1rem;
+    text-align: center;
+}
+
+header h1{
+    font-family: 'merriweather',serif;
+    font-size: 9vh;
+}
+
+header p{
+    font-size: 1.5rem;
+}
+
+.solar-system-overview{
+    width: 100%;
+}
+
+
+.solar-system-overview h2{
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.swiper {
+    margin: 2rem auto ;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img{
+    width: 20%;
+    padding: 0 5%;
+    object-fit: cover;
+}
+
+.planets{
+    width: 100%;
+}
+
+.planets h2, .moons h2, .solar-system-objects h2{
+    font-size: 10vh;
+    text-align: center;
+    margin: 5%;
+}
+
+.planet, .moon{
+    border: 2px solid white;
+    border-radius: 2px;
+    padding: 1rem;
+    width: 50%;
+    margin: 1.5rem auto;
+}
+
+.planet h3,.moon h3, .solar-system-objects h3{
+    font-family: 'ubuntu',serif;
+    font-size: 1.7rem;
+    margin: 0.5rem;
+    color: #14a8c9;
+}
+
+.planet p,.moon p ,.solar-system-objects p{
+    padding: 0.5rem;
+}
+
+.planet li{
+    font-size: 1.3rem;
+    padding: 0 0.5rem;
+}
+
+.planet img, .moon img{
+    height: 15rem;
+    min-height: 12rem;
+    object-fit: cover;
+    animation: float 3s infinite ease-in;
+}
+
+@keyframes float{
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+
+.align{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moons{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.moon{
+    margin: 1rem auto 0 auto;
+    border: none;
+}
+
+.solar-system-objects{
+    width: 100%;
+}
+
+.solar-system-objects article{
+    width: 70%;
+    margin: 1rem auto;
+}
+
+.solar-system-objects h3{
+    font-size: 1.5rem;
+}
+
+.footer{
+    width: 100%;
+    border-top: 5px solid white;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.footer p{
+    padding: 1rem;
+    font-weight: bold;
+}
+
