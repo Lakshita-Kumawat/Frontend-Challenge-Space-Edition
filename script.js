@@ -16,8 +16,6 @@ swiperContainer.innerHTML=`
       <div class="swiper-slide"><img src="assets/planets/earth.png"><img src="assets/planets/jupiter.png"><img src="assets/planets/mars.png"></div>
       <div class="swiper-slide"><img src="assets/moon/moon.png"><img src="assets/moon/europa.png"><img src="assets/moon/titan.png"></div>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
   </div>
 `;
 
@@ -27,6 +25,10 @@ var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -87,6 +89,18 @@ const imageDetails = [
   {
     name:"europa",
     src:"assets/moon/europa.png"
+  },
+  {
+    name:"comets",
+    src:"assets/other-object/comet.jpg"
+  },
+  {
+    name:"asteroid-belt",
+    src:"assets/other-object/asteroid-belt.png"
+  },
+  {
+    name:"kuiper-belt",
+    src:"assets/other-object/kuiper-belt.jpg"
   },
 ];
 
