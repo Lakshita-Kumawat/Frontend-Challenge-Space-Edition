@@ -1,4 +1,4 @@
-//backfround video
+//background video
 const video = document.createElement('video');
 video.src="assets/space.mp4";
 video.autoplay='true';
@@ -15,6 +15,7 @@ swiperContainer.innerHTML=`
     <div class="swiper-wrapper">
       <div class="swiper-slide"><img src="assets/planets/earth.png"><img src="assets/planets/jupiter.png"><img src="assets/planets/mars.png"></div>
       <div class="swiper-slide"><img src="assets/moon/moon.png"><img src="assets/moon/europa.png"><img src="assets/moon/titan.png"></div>
+      <div class="swiper-slide"><img src="assets/planets/neptune.png"><img src="assets/planets/uranus.png"><img src="assets/planets/venus.png"></div>
     </div>
   </div>
 `;
@@ -106,8 +107,24 @@ const imageDetails = [
 
 imageDetails.forEach(({name,src}) => insertImg(name,src));
 
+//nyan cat
+const catContainer = document.createElement('div');
+catContainer.id="nyan-cat";
+catContainer.innerHTML = `<img src="assets/nyan-cat.png" alt="nyan-cat"></img>`;
+document.querySelector('.solar-system-overview').append(catContainer);
+
 //gsap
 gsap.registerPlugin(ScrollTrigger);
+
+const width = window.innerWidth;
+
+gsap.to("#nyan-cat img",{
+  left:width-150+"px",
+  scrollTrigger:{
+    trigger:"#nyan-cat",
+    scrub:3
+  }
+})
 
 gsap.fromTo("h1, header p",{
   y:30,
@@ -135,11 +152,22 @@ gsap.utils.toArray('h2').forEach(h2=>{
 
 gsap.utils.toArray('.planet, .solar-system-objects article').forEach(article=>{
   gsap.fromTo(article,{
-    x:-100,
+    x:-140,
     opacity:0
   },{
     x:0,
     opacity:1,
+    duration:2,
+    delay:0.5,
+    scrollTrigger:article
+  })
+})
+
+gsap.utils.toArray('.planet:nth-child(even)').forEach(article=>{
+  gsap.fromTo(article,{
+    x:140,
+  },{
+    x:0,
     duration:2,
     delay:0.5,
     scrollTrigger:article
